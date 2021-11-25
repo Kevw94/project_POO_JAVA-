@@ -55,9 +55,10 @@ public class Menu {
                 exit.Exit();
 
                 break;
-            case 5:
-                DefaultArchetype newCharacter = new DefaultArchetype();
-                System.out.println(newCharacter);
+//            case 5:
+//                break;
+//                DefaultArchetype newCharacter = new DefaultArchetype();
+//                System.out.println(newCharacter);
         }
 
     }

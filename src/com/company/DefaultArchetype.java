@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class DefaultArchetype extends Menu {
     //Scanner createCharacter = new Scanner(System.in);
-    static DefaultArchetype character = new DefaultArchetype();
+    //static DefaultArchetype character = new DefaultArchetype();
     String name;
     int lifePoint;
     int damage;
@@ -22,6 +22,19 @@ public class DefaultArchetype extends Menu {
         this.initiative = menu.nextInt();
         System.out.println("Vous avez crée un nouveau personnage :)");
     }
+
+//    void createCharacters(){
+//        System.out.println("Entrez un nom");
+//        this.name = menu.next();
+//        System.out.println("Entrez des damages");
+//        this.damage = menu.nextInt();
+//        System.out.println("Entrez des lifepoint");
+//        this.lifePoint = menu.nextInt();
+//        System.out.println("Entrez une initiative");
+//        this.initiative = menu.nextInt();
+//        System.out.println("Vous avez crée un nouveau personnage :)");
+//
+//    }
 
 
 

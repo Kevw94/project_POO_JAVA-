@@ -9,9 +9,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-//        DefaultArchetype Test = new DefaultArchetype();
-        List<DefaultArchetype> listOfCharacters = new ArrayList();
-        //createCharacter.add(listOfCharacters);
 
 
 //        while (true) {
@@ -37,15 +34,6 @@ public class Main {
 //        DefaultArchetype.lifePoint = test.nextInt(persoTest.lifePoint);
 //        DefaultArchetype.initiative = test.nextInt(persoTest.initiative);
 //
-
-
-
-
-
-        //DefaultArchetype persoTest = new DefaultArchetype(name, damage, lifePoint, initiative);
-
-
-        //System.out.println(persoTest);
 
 
 

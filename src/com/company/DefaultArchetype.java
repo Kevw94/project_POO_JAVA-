@@ -1,32 +1,58 @@
 package com.company;
 
 
-public class DefaultArchetype extends Menu {
-    //Scanner createCharacter = new Scanner(System.in);
-    //static DefaultArchetype character = new DefaultArchetype();
-    protected String name;
-    protected int lifePoint;
-    protected int damage;
-    protected int initiative;
+import java.util.List;
+import java.util.Scanner;
 
-//    protected void DefaultArchetype(String name, int lifePoint, int damage, int initiative){
-//        this.name = name;
-//        this.lifePoint = lifePoint;
-//        this.damage = damage;
-//        this.initiative = initiative;
+public class DefaultArchetype  {
 
 
+        protected String name;
 
-    public DefaultArchetype() {
-        System.out.println("Entrez un nom");
-        this.name = menu.next();
-        System.out.println("Entrez des damages");
-        this.damage = menu.nextInt();
-        System.out.println("Entrez des lifepoint");
-        this.lifePoint = menu.nextInt();
-        System.out.println("Entrez une initiative");
-        this.initiative = menu.nextInt();
-        System.out.println("Vous avez crée un nouveau personnage :)");
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getLifePoint() {
+        return lifePoint;
+    }
+
+    public void setLifePoint(int lifePoint) {
+        this.lifePoint = lifePoint;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getInitiative() {
+        return initiative;
+    }
+
+    public void setInitiative(int initiative) {
+        this.initiative = initiative;
+    }
+
+        protected int lifePoint;
+        protected int damage;
+        protected int initiative;
+        
+        
+
+
+     DefaultArchetype() {
+    }
+
+
+    public DefaultArchetype(String name, int lifePoint, int damage, int initiative) {
     }
 
 
@@ -50,6 +76,11 @@ public class DefaultArchetype extends Menu {
         System.out.println(defaultArchetype);
     }
 }
+
+
+
+
+
 
 
 

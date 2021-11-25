@@ -1,11 +1,6 @@
 package com.company;
 
 
-import java.util.List;
-import java.util.Scanner;
-
-import static com.company.Main.fightTurn;
-
 public class Fight extends Menu {
 
     public Fight() {
@@ -13,6 +8,8 @@ public class Fight extends Menu {
     }
 
      void Fight(DefaultArchetype perso1, DefaultArchetype perso2) {
+        int refreshPvPerso1 = perso1.getLifePoint();
+        int refreshPvPerso2 = perso2.getLifePoint();
         // -----------------------take initiative---------------------------
 //       DefaultArchetype perso1, DefaultArchetype perso2;
         int initiative = perso1.initiative;
@@ -39,6 +36,8 @@ public class Fight extends Menu {
                 System.out.println(perso2.name + " win the fight CONGRATS");
             }
         }
+         perso1.setLifePoint(refreshPvPerso1);
+         perso2.setLifePoint(refreshPvPerso2);
     }
 
 

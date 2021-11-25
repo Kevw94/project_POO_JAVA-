@@ -1,25 +1,35 @@
 package com.company;
+import com.company.ShowListRegisteredCharacter;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 //implements Cloneable
 
-public class Menu  {
-    Scanner chooseWarrior = new Scanner(System.in);
+public class Menu {
+    static int fightTurn = 0;
+    //   List<DefaultArchetype> listOfCharacters = new ArrayList();
+    Scanner chooseWarrior = new Scanner(System.in);;
+    Scanner menu = new Scanner(System.in);;
     int index; //= chooseWarrior.nextInt();
-    List<DefaultArchetype> listOfCharacters = new ArrayList();
-
-    Scanner menu = new Scanner(System.in);
     int numberChoosenByUser;
 
-     public Menu(){
+
+
+    //    Scanner chooseWarrior = new Scanner(System.in);
+//    Scanner menu = new Scanner(System.in);
+
+//    List<DefaultArchetype> listOfCharacters = new ArrayList();
+
+
+
+    public Menu() {
+
 
     }
 
 
-    void printMenu() {
+    protected void printMenu() {
         System.out.println("Application has started");
         System.out.println("  ");
         System.out.println("-----------------------------------------");
@@ -40,23 +50,24 @@ public class Menu  {
         }
 
 
-    void chooseTypeMenu(int anyNumber)  {
+    protected void chooseTypeMenu(int anyNumber)  {
         switch (anyNumber) {
             case 1:
-                listOfCharacters.add(new DefaultArchetype());
+                new MenuArchetype().printMenuArchetype();
+
+                //listOfCharacters.add(new DefaultArchetype());
                 //System.out.println(listOfCharacters);
                 printMenu();
 
             case 2:
-                System.out.println(listOfCharacters);
+                System.out.println(ShowListRegisteredCharacter.getListOfCharacters());
                 printMenu();
             case 3:
-                System.out.println(listOfCharacters);
+                System.out.println(ShowListRegisteredCharacter.getListOfCharacters());
                 System.out.println("choisissez votre combattant numéro 1");
-                DefaultArchetype warrior1 = listOfCharacters.get(index = chooseWarrior.nextInt() - 1);
+                DefaultArchetype warrior1 = ShowListRegisteredCharacter.getListOfCharacters().get(index = chooseWarrior.nextInt() - 1);
                 System.out.println("choisissez votre combattant numéro 2");
-                DefaultArchetype warrior2 = listOfCharacters.get(index = chooseWarrior.nextInt() - 1);
-
+                DefaultArchetype warrior2 = ShowListRegisteredCharacter.getListOfCharacters().get(index = chooseWarrior.nextInt() - 1);
 
                 Fight fight = new Fight();
                 fight.Fight(warrior1, warrior2);
@@ -67,6 +78,10 @@ public class Menu  {
                 exit.Exit();
 
                 break;
+            case 5:
+                ShowListRegisteredCharacter.addDefaultArchetype(new DefaultArchetype());
+            System.out.println(ShowListRegisteredCharacter.getListOfCharacters());
+            printMenu();
         }
 
     }

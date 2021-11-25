@@ -1,19 +1,27 @@
 package com.company;
 
+
+import java.util.List;
+import java.util.Scanner;
+
 import static com.company.Main.fightTurn;
 
-public class Fight {
-    DefaultArchetype perso1 = new DefaultArchetype();
-    DefaultArchetype perso2 = new DefaultArchetype();
+public class Fight extends Menu {
 
+    public Fight() {
 
-    void Fight() {
-//        perso1.DefaultArchetype("michel", 58, 8, 20);
-//        perso2.DefaultArchetype("Gérard", 48, 8, 30);
+    }
+
+     void Fight(DefaultArchetype perso1, DefaultArchetype perso2) {
+//        for (int i = 0; i < listOfCharacters.size(); i++) {
+//            //System.out.println(listOfCharacters.get(i));
+//            listOfCharacters.get(i);
+//        }
+
 
 
         // -----------------------take initiative---------------------------
-//        DefaultArchetype perso1, DefaultArchetype perso2;
+//       DefaultArchetype perso1, DefaultArchetype perso2;
         int initiative = perso1.initiative;
         int initiative2 = perso2.initiative;
         int fightTurn = 0;
@@ -68,6 +76,7 @@ public class Fight {
 
         }
     }
+
     //___________________________________FUNCTION2________________________________
     private static void joueurFunction2 (DefaultArchetype perso1, DefaultArchetype perso2) {
         while (perso1.lifePoint > 0 && perso2.lifePoint > 0) {
@@ -96,6 +105,7 @@ public class Fight {
         }
     }
 }
+
 //    void Fight(){
 //        // show personnage you wanna choose for fight
 //

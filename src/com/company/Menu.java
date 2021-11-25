@@ -5,9 +5,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
+    Scanner chooseWarrior = new Scanner(System.in);
+    int index; //= chooseWarrior.nextInt();
     List<DefaultArchetype> listOfCharacters = new ArrayList();
+
     Scanner menu = new Scanner(System.in);
     int numberChoosenByUser;
+    //public DefaultArchetype perso1 =  listOfCharacters.get(index);
+    //public DefaultArchetype perso2 = listOfCharacters.get(index);
 
      public Menu(){
 
@@ -46,8 +51,12 @@ public class Menu {
                 System.out.println(listOfCharacters);
                 printMenu();
             case 3:
+                DefaultArchetype warrior1 = listOfCharacters.get(index = chooseWarrior.nextInt());
+                DefaultArchetype warrior2 = listOfCharacters.get(index = chooseWarrior.nextInt());
+                System.out.println(warrior1);
+                System.out.println(warrior2);
                 Fight fight = new Fight();
-                //fight.Fight();
+                fight.Fight(warrior1, warrior2);
                 break;
             case 4:
                 Exit exit = new Exit();
@@ -62,7 +71,14 @@ public class Menu {
 
     }
 
+//    private void Fight(DefaultArchetype perso1, DefaultArchetype perso2) {
+//    }
+
 }
 
+
+//for(DefaultArchetype character : listOfCharacter {
+//  sout(character)
+//}
 
 

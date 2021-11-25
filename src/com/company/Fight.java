@@ -13,13 +13,6 @@ public class Fight extends Menu {
     }
 
      void Fight(DefaultArchetype perso1, DefaultArchetype perso2) {
-//        for (int i = 0; i < listOfCharacters.size(); i++) {
-//            //System.out.println(listOfCharacters.get(i));
-//            listOfCharacters.get(i);
-//        }
-
-
-
         // -----------------------take initiative---------------------------
 //       DefaultArchetype perso1, DefaultArchetype perso2;
         int initiative = perso1.initiative;
@@ -38,7 +31,7 @@ public class Fight extends Menu {
             }
 
         } else {
-            System.out.println("P2 will begin the fight");
+            System.out.println("perso will begin the fight");
             joueurFunction2(perso1, perso2);
             if (perso1.lifePoint > 0) {
                 System.out.println(perso1.name + " win the fight CONGRATS");
@@ -106,12 +99,6 @@ public class Fight extends Menu {
     }
 }
 
-//    void Fight(){
-//        // show personnage you wanna choose for fight
-//
-//        //Lancer le combat
-//        System.out.println("Fight begins :)");
-//    }
 
 
 

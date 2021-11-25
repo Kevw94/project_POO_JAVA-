@@ -1,18 +1,18 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+//implements Cloneable
 
-public class Menu {
+public class Menu  {
     Scanner chooseWarrior = new Scanner(System.in);
     int index; //= chooseWarrior.nextInt();
     List<DefaultArchetype> listOfCharacters = new ArrayList();
 
     Scanner menu = new Scanner(System.in);
     int numberChoosenByUser;
-    //public DefaultArchetype perso1 =  listOfCharacters.get(index);
-    //public DefaultArchetype perso2 = listOfCharacters.get(index);
 
      public Menu(){
 
@@ -40,7 +40,7 @@ public class Menu {
         }
 
 
-    void chooseTypeMenu(int anyNumber) {
+    void chooseTypeMenu(int anyNumber)  {
         switch (anyNumber) {
             case 1:
                 listOfCharacters.add(new DefaultArchetype());
@@ -51,34 +51,28 @@ public class Menu {
                 System.out.println(listOfCharacters);
                 printMenu();
             case 3:
-                DefaultArchetype warrior1 = listOfCharacters.get(index = chooseWarrior.nextInt());
-                DefaultArchetype warrior2 = listOfCharacters.get(index = chooseWarrior.nextInt());
-                System.out.println(warrior1);
-                System.out.println(warrior2);
+                System.out.println(listOfCharacters);
+                System.out.println("choisissez votre combattant numéro 1");
+                DefaultArchetype warrior1 = listOfCharacters.get(index = chooseWarrior.nextInt() - 1);
+                System.out.println("choisissez votre combattant numéro 2");
+                DefaultArchetype warrior2 = listOfCharacters.get(index = chooseWarrior.nextInt() - 1);
+
+
                 Fight fight = new Fight();
                 fight.Fight(warrior1, warrior2);
+                printMenu();
                 break;
             case 4:
                 Exit exit = new Exit();
                 exit.Exit();
 
                 break;
-//            case 5:
-//                break;
-//                DefaultArchetype newCharacter = new DefaultArchetype();
-//                System.out.println(newCharacter);
         }
 
     }
-
-//    private void Fight(DefaultArchetype perso1, DefaultArchetype perso2) {
-//    }
-
-}
+};
 
 
-//for(DefaultArchetype character : listOfCharacter {
-//  sout(character)
-//}
+
 
 

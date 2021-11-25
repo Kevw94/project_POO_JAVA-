@@ -1,10 +1,10 @@
 package com.company;
 
 class DefaultArchetype {
-    private String name;
-    private int lifePoint;
-    private int damage;
-    private int initiative;
+    protected String name;
+    protected int lifePoint;
+    protected int damage;
+    protected int initiative;
 
     protected void DefaultArchetype(String name, int lifePoint, int damage, int initiative){
         this.name = name;

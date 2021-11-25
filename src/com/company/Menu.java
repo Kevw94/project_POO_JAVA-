@@ -47,7 +47,7 @@ public class Menu {
                 printMenu();
             case 3:
                 Fight fight = new Fight();
-                fight.Fight();
+                //fight.Fight();
                 break;
             case 4:
                 Exit exit = new Exit();

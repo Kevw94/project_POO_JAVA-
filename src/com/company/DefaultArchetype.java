@@ -1,23 +1,20 @@
 package com.company;
 
-class DefaultArchetype {
-    private String name;
-    private int lifePoint;
-    private int damage;
-    private int initiative;
 
-    protected void DefaultArchetype(String name, int lifePoint, int damage, int initiative){
-        this.name = name;
-        this.lifePoint = lifePoint;
-        this.damage = damage;
-        this.initiative = initiative;
 public class DefaultArchetype extends Menu {
     //Scanner createCharacter = new Scanner(System.in);
     //static DefaultArchetype character = new DefaultArchetype();
-    String name;
-    int lifePoint;
-    int damage;
-    int initiative;
+    protected String name;
+    protected int lifePoint;
+    protected int damage;
+    protected int initiative;
+
+//    protected void DefaultArchetype(String name, int lifePoint, int damage, int initiative){
+//        this.name = name;
+//        this.lifePoint = lifePoint;
+//        this.damage = damage;
+//        this.initiative = initiative;
+
 
 
     public DefaultArchetype() {
@@ -31,21 +28,6 @@ public class DefaultArchetype extends Menu {
         this.initiative = menu.nextInt();
         System.out.println("Vous avez crée un nouveau personnage :)");
     }
-    public String toString(){
-
-//    void createCharacters(){
-//        System.out.println("Entrez un nom");
-//        this.name = menu.next();
-//        System.out.println("Entrez des damages");
-//        this.damage = menu.nextInt();
-//        System.out.println("Entrez des lifepoint");
-//        this.lifePoint = menu.nextInt();
-//        System.out.println("Entrez une initiative");
-//        this.initiative = menu.nextInt();
-//        System.out.println("Vous avez crée un nouveau personnage :)");
-//
-//    }
-
 
 
     public String toString() {

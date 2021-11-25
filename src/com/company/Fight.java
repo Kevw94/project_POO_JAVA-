@@ -7,11 +7,9 @@ public class Fight {
     DefaultArchetype perso2 = new DefaultArchetype();
 
 
-
     void Fight() {
-        perso1.DefaultArchetype("michel", 58, 8, 20);
-        perso2.DefaultArchetype("Gérard", 48, 8, 30);
-
+//        perso1.DefaultArchetype("michel", 58, 8, 20);
+//        perso2.DefaultArchetype("Gérard", 48, 8, 30);
 
 
         // -----------------------take initiative---------------------------
@@ -41,4 +39,69 @@ public class Fight {
             }
         }
     }
+
+
+
+    //____________________________FUNCTION1_______________________________
+    private static void joueurFunction1 (DefaultArchetype perso1, DefaultArchetype perso2){
+        while (perso1.lifePoint > 0 && perso2.lifePoint > 0) {
+            fightTurn++;
+            System.out.println("Vous êtes au " + fightTurn + "ème tour");
+            //___________infliger les dégat des joueur à chaque tour_____________
+            perso2.takeDamages(perso1.getDamages());
+            System.out.println("P1 dealt " + perso1.getDamages() + " damage to P2");
+            if (perso2.lifePoint <= 0) {
+                break;
+            } else {
+                System.out.println("HP of P2 = " + perso2.lifePoint);
+            }
+
+
+            perso1.takeDamages(perso2.getDamages());
+            System.out.println("P2 dealt " + perso2.getDamages() + " damage to P1");
+            if (perso1.lifePoint <= 0) {
+                break;
+            } else {
+                System.out.println("HP of P1 = " + perso1.lifePoint);
+            }
+            //_____________________afficher le gagnant_________________________
+
+        }
+    }
+    //___________________________________FUNCTION2________________________________
+    private static void joueurFunction2 (DefaultArchetype perso1, DefaultArchetype perso2) {
+        while (perso1.lifePoint > 0 && perso2.lifePoint > 0) {
+
+            fightTurn++;
+            System.out.println("Vous êtes au " + fightTurn + "ème tour");
+            //___________infliger les dégat des joueur à chaque tour_____________
+            perso1.takeDamages(perso2.getDamages());
+            System.out.println("P2 dealt " + perso2.getDamages() + " damage to P1");
+            if (perso1.lifePoint <= 0) {
+
+                break;
+            } else {
+                System.out.println("HP of P1 = " + perso1.lifePoint);
+
+            }
+            perso2.takeDamages(perso1.getDamages());
+            System.out.println("P1 dealt " + perso1.getDamages() + " damage to P2");
+            if (perso2.lifePoint <= 0) {
+                break;
+            } else {
+                System.out.println("HP of P2 = " + perso2.lifePoint);
+
+            }
+            //___________________afficher le gagnant____________________
+        }
+    }
 }
+//    void Fight(){
+//        // show personnage you wanna choose for fight
+//
+//        //Lancer le combat
+//        System.out.println("Fight begins :)");
+//    }
+
+
+

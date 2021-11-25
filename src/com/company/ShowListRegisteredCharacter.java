@@ -1,8 +1,17 @@
 package com.company;
 
-public class ShowListRegisteredCharacter {
+import java.util.ArrayList;
+import java.util.List;
 
-    void ShowListRegisteredCharacter(){
+public class ShowListRegisteredCharacter extends MenuArchetype {
+
+
+
+    public void ShowListRegisteredCharacter() {
+
+
+        //System.out.println(listOfCharacters);
+
         System.out.println("ShowListRegisteredCharacter :)");
     }
 }

@@ -39,13 +39,12 @@ public class Menu {
         switch (anyNumber) {
             case 1:
                 listOfCharacters.add(new DefaultArchetype());
-                System.out.println(listOfCharacters);
+                //System.out.println(listOfCharacters);
                 printMenu();
 
             case 2:
-                ShowListRegisteredCharacter showListRegisteredCharacter = new ShowListRegisteredCharacter();
-                showListRegisteredCharacter.ShowListRegisteredCharacter();
-                break;
+                System.out.println(listOfCharacters);
+                printMenu();
             case 3:
                 Fight fight = new Fight();
                 fight.Fight();

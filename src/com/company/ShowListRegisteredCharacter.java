@@ -1,8 +1,18 @@
 package com.company;
+import java.util.ArrayList;
+import java.util.List;
 
-public class ShowListRegisteredCharacter {
+public class ShowListRegisteredCharacter extends Menu {
 
-    void ShowListRegisteredCharacter(){
+
+
+    public void ShowListRegisteredCharacter() {
+
+        System.out.println(listOfCharacters);
+
+
+        //System.out.println(listOfCharacters);
+
         System.out.println("ShowListRegisteredCharacter :)");
     }
 }

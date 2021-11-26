@@ -59,7 +59,7 @@ public class DefaultArchetype  {
                 "name =  " + name + "\n" +
                 "Lifepoint = " + lifePoint + "\n" +
                 "Damage = " + damage + "\n" +
-                "Initiative = " + initiative;
+                "Initiative = " + initiative + "\n";
     }
 
     public int getDamages() {

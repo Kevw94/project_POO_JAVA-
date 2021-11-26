@@ -4,8 +4,8 @@ package com.company;
 // -------------------- ADD WIZARD -------------------------
 
 class WizardArchetype extends DefaultArchetype {
-
-    public WizardArchetype(String name,
+int finalDamage;
+    protected WizardArchetype(String name,
                           int lifePoint,
                           int damage,
                           int initiative) {
@@ -37,7 +37,16 @@ class WizardArchetype extends DefaultArchetype {
                 "Initiative = " + initiative + "\n" +
                 "Magic damage = " + MagicDamage;
     }
+    public int getDamages(){
+        finalDamage = damage + MagicDamage;
+        MagicDamage = MagicDamage / 2;
+        return finalDamage;
+    }
 
+    public int takeDamages(int damage){
+        lifePoint = lifePoint - damage;
+        return lifePoint;
+    }
     public void wizardArchetype(WizardArchetype wizardArchetype) {
         System.out.println(wizardArchetype);
     }

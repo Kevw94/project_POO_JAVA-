@@ -17,23 +17,23 @@ public class Fight extends Menu {
         int fightTurn = 0;
 
         if (initiative > initiative2) {
-            System.out.println("P1 will begin at this fight");
+            System.out.println(perso1.name + " will begin at this fight");
             joueurFunction1(perso1, perso2);
             //------------------------Print winner------------------------------
 
             if (perso1.lifePoint > 0) {
-                System.out.println(perso1.name + " win the fight CONGRATS");
+                System.out.println(perso1.name + " wins the fight CONGRATS");
             } else {
-                System.out.println(perso2.name + " win the fight CONGRATS");
+                System.out.println(perso2.name + " wins the fight CONGRATS");
             }
 
         } else {
-            System.out.println("perso will begin the fight");
+            System.out.println(perso2.name + " will begin the fight");
             joueurFunction2(perso1, perso2);
             if (perso1.lifePoint > 0) {
-                System.out.println(perso1.name + " win the fight CONGRATS");
+                System.out.println(perso1.name + " wins the fight CONGRATS");
             } else {
-                System.out.println(perso2.name + " win the fight CONGRATS");
+                System.out.println(perso2.name + " wins the fight CONGRATS");
             }
         }
          perso1.setLifePoint(refreshPvPerso1);
@@ -46,23 +46,24 @@ public class Fight extends Menu {
     private static void joueurFunction1 (DefaultArchetype perso1, DefaultArchetype perso2){
         while (perso1.lifePoint > 0 && perso2.lifePoint > 0) {
             fightTurn++;
-            System.out.println("Vous êtes au " + fightTurn + "ème tour");
+            System.out.println("Turn : " + fightTurn );
             //___________infliger les dégat des joueur à chaque tour_____________
-            perso2.takeDamages(perso1.getDamages());
-            System.out.println("P1 dealt " + perso1.getDamages() + " damage to P2");
+            int dammagePerso1 = perso1.getDamages();
+            perso2.takeDamages(dammagePerso1);
+            System.out.println(perso1.name + " dealt " + dammagePerso1 + " damage  to " + perso2.name);
             if (perso2.lifePoint <= 0) {
                 break;
             } else {
                 System.out.println("HP of P2 = " + perso2.lifePoint);
             }
 
-
-            perso1.takeDamages(perso2.getDamages());
-            System.out.println("P2 dealt " + perso2.getDamages() + " damage to P1");
+            int dammagePerso2 = perso2.getDamages();
+            perso1.takeDamages(dammagePerso2);
+            System.out.println(perso2.name + " dealt " + dammagePerso2 + " damage " + perso1.name );
             if (perso1.lifePoint <= 0) {
                 break;
             } else {
-                System.out.println("HP of P1 = " + perso1.lifePoint);
+                System.out.println("Health " +  perso1.name + " = " + perso1.lifePoint);
             }
             //_____________________afficher le gagnant_________________________
 
@@ -74,24 +75,24 @@ public class Fight extends Menu {
         while (perso1.lifePoint > 0 && perso2.lifePoint > 0) {
 
             fightTurn++;
-            System.out.println("Vous êtes au " + fightTurn + "ème tour");
+            System.out.println("Turn : " + fightTurn);
             //___________infliger les dégat des joueur à chaque tour_____________
-            perso1.takeDamages(perso2.getDamages());
-            System.out.println("P2 dealt " + perso2.getDamages() + " damage to P1");
-            if (perso1.lifePoint <= 0) {
-
-                break;
-            } else {
-                System.out.println("HP of P1 = " + perso1.lifePoint);
-
-            }
-            perso2.takeDamages(perso1.getDamages());
-            System.out.println("P1 dealt " + perso1.getDamages() + " damage to P2");
+            int dammagePerso1 = perso1.getDamages();
+            perso2.takeDamages(dammagePerso1);
+            System.out.println(perso1.name + " dealt " + dammagePerso1+ " damage to " +  perso2.name);
             if (perso2.lifePoint <= 0) {
                 break;
             } else {
-                System.out.println("HP of P2 = " + perso2.lifePoint);
+                System.out.println("Health of " + perso2.name + " = " + perso2.lifePoint);
+            }
 
+            int dammagePerso2 = perso2.getDamages();
+            perso1.takeDamages(dammagePerso2);
+            System.out.println(perso2.name + " dealt " + dammagePerso2 + " damage to "  + perso1.name);
+            if (perso1.lifePoint <= 0) {
+                break;
+            } else {
+                System.out.println("Health of " + perso1.name + " = " + perso1.lifePoint);
             }
             //___________________afficher le gagnant____________________
         }

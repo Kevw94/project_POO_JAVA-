@@ -5,7 +5,7 @@ package com.company;
 
 class WarriorArchetype extends DefaultArchetype {
 
-    public WarriorArchetype(String name,
+    protected WarriorArchetype(String name,
                            int lifePoint,
                            int damage,
                            int initiative) {
@@ -39,11 +39,15 @@ class WarriorArchetype extends DefaultArchetype {
         return damage;
     }
 
-    public int takeDamages(int damage){
-        if (shield > damage){
-            lifePoint = lifePoint + shield - damage;
-            return lifePoint;
+    public int takeDamages(int dmgPerso2ou1){
+        int damage2 = dmgPerso2ou1 - shield;
+        System.out.println(damage-shield);
+        if (damage2 <=0){
         }
+        else {
+            lifePoint = lifePoint - damage2;
+        }
+
         return lifePoint;
     }
 

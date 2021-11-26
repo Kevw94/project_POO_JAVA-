@@ -4,8 +4,9 @@ package com.company;
 import java.util.Random;
 
 class RogueArchetype extends DefaultArchetype {
+    int countCritical=0;
 
-    public RogueArchetype(String name,
+    protected RogueArchetype(String name,
                           int lifePoint,
                           int damage,
                           int initiative) {
@@ -13,23 +14,17 @@ class RogueArchetype extends DefaultArchetype {
 
     }
 
-    public int getDodge() {
-        return dodge;
-    }
+
 
     public void setDodge(int dodge) {
-        this.dodge = dodge;
-    }
-
-    public int getCriticalHit() {
-        return criticalHit;
+        this.dodgeScore = dodge;
     }
 
     public void setCriticalHit(int criticalHit) {
         this.criticalHit = criticalHit;
     }
 
-    private int dodge;
+    private int dodgeScore;
     private int criticalHit;
 
 
@@ -43,31 +38,37 @@ class RogueArchetype extends DefaultArchetype {
                 "Lifepoint = " + lifePoint + "\n" +
                 "Damage = " + damage + "\n" +
                 "Initiative = " + initiative + "\n" +
-                "Dodge = " + dodge + "\n" +
+                "Dodge = " + dodgeScore + "\n" +
                 "CriticalHit = " + criticalHit + "\n";
     }
 
-    public void PercentDodge() {
-        Random random = new Random();
-        int value = random.nextInt(100 + 1 + 1) + 1;
-        boolean madeDodge;
-        if (value <= dodge) {
-            madeDodge = true;
-        } else {
-            madeDodge = false;
+    public int getDamages() {
+        int randomNbr = (int) Math.floor(Math.random() * (100 - 0 + 1)) + 1;
+
+        if (randomNbr<=criticalHit && countCritical==0){
+            countCritical++;
+            System.out.println("critical: "+ (this.damage*2));
+            return this.damage*2;
+        }else{
+            countCritical=0;
+            return this.damage;
         }
+    }
+    public int takeDamages(int damageperso1ou2) {
+        int randomNbr = (int) Math.floor(Math.random() * (100 - 0 + 1)) + 1;
+
+        if (randomNbr <= dodgeScore) {
+            System.out.println("dodge");
+            return lifePoint;
+        } else {
+            lifePoint = lifePoint - damageperso1ou2;
+            return lifePoint;
+        }
+
     }
 
-    public void PercentCriticalHit() {
-        Random random = new Random();
-        int value = random.nextInt(100 + 1 + 1) + 1;
-        boolean madeCriticalHit;
-        if (value <= criticalHit) {
-            madeCriticalHit = true;
-        } else {
-            madeCriticalHit = false;
-        }
-    }
+
+
 
     public void rogueArchetype(RogueArchetype rogueArchetype) {
         System.out.println(rogueArchetype);

@@ -27,7 +27,7 @@ public class ShowListRegisteredCharacter  {
 
         System.out.println(listOfCharacters);
 
-        System.out.println("ShowListRegisteredCharacter :)");
+        //System.out.println("ShowListRegisteredCharacter :)");
     }
 //    public String toString(){
 //        //setListOfCharacters(listOfCharacters).get(indexList());

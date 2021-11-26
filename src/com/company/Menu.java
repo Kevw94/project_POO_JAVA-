@@ -12,18 +12,18 @@ import static com.company.ShowListRegisteredCharacter.listOfCharacters;
 public class Menu {
     static int fightTurn = 0;
     //   List<DefaultArchetype> listOfCharacters = new ArrayList();
-    Scanner chooseWarrior = new Scanner(System.in);
-
-    Scanner menu = new Scanner(System.in);
-    
+    Scanner chooseWarrior = new Scanner(System.in);;
+    Scanner menu = new Scanner(System.in);;
     int index; //= chooseWarrior.nextInt();
     int numberChoosenByUser;
+
 
 
     //    Scanner chooseWarrior = new Scanner(System.in);
 //    Scanner menu = new Scanner(System.in);
 
 //    List<DefaultArchetype> listOfCharacters = new ArrayList();
+
 
 
     public Menu() {
@@ -33,10 +33,7 @@ public class Menu {
 
 
     protected void printMenu() {
-
         try {
-
-
             System.out.println("Application has started");
             System.out.println("  ");
             System.out.println("-----------------------------------------");
@@ -44,86 +41,97 @@ public class Menu {
             String secondItemMenu = "2: Show Character";
             String thirdItemMenu = "3: Fight";
             String fourthItemMenu = "4: Quit";
-            String firthItemMenu = "5: Remove character";
+            String firthItemMenu = "5: remove Character";
             System.out.println(firstItemMenu);
             System.out.println(secondItemMenu);
             System.out.println(thirdItemMenu);
             System.out.println(fourthItemMenu);
             System.out.println(firthItemMenu);
             System.out.println();
-
             numberChoosenByUser = menu.nextInt();
             chooseTypeMenu(numberChoosenByUser);
-        }
 
-        catch (Exception e)  {
+        }
+        catch (Exception e){
             menu.nextLine();
-            System.out.println("You written an invalid number");
-            System.out.println("please enter a number referenced in the menu");
-            System.out.println("Press Enter to continue");
+            System.out.println("You written an invalid syntax ");
+            System.out.println("please enter a valid syntax for your all route referenced");
+            System.out.println("press Enter to continue");
+            menu.nextLine();
             printMenu();
         }
-    }
 
 
 
-    protected void chooseTypeMenu(int anyNumber) {
-            switch (anyNumber) {
 
-                case 1:
-                    new MenuArchetype().printMenuArchetype();
+        }
 
-                    //listOfCharacters.add(new DefaultArchetype());
-                    //System.out.println(listOfCharacters);
-                    printMenu();
-                    break;
 
-                case 2:
-                    new ShowListRegisteredCharacter().ShowListRegisteredCharacter();
-                    System.out.println(ShowListRegisteredCharacter.getListOfCharacters().get(index));
-                    printMenu();
-                    break;
-                case 3:
-                    System.out.println(ShowListRegisteredCharacter.getListOfCharacters());
-                    System.out.println("choisissez votre combattant numéro 1");
-                    DefaultArchetype warrior1 = ShowListRegisteredCharacter.getListOfCharacters().get(index = chooseWarrior.nextInt() - 1);
-                    System.out.println("choisissez votre combattant numéro 2");
-                    DefaultArchetype warrior2 = ShowListRegisteredCharacter.getListOfCharacters().get(index = chooseWarrior.nextInt() - 1);
+    protected void chooseTypeMenu(int anyNumber)  {
+        switch (anyNumber) {
+            case 1:
+                new MenuArchetype().printMenuArchetype();
 
-                    Fight fight = new Fight();
-                    fight.Fight(warrior1, warrior2);
-                    printMenu();
-                    break;
+                //listOfCharacters.add(new DefaultArchetype());
+                //System.out.println(listOfCharacters);
+                printMenu();
+                break;
 
-                case 4:
-                    Exit exit = new Exit();
-                    exit.Exit();
-                    break;
-                case 5:
-                    System.out.println("------------------------------");
-                    System.out.println(" Choose your Character to delete ! ");
-                    System.out.println("------------------------------");
-                    System.out.println(listOfCharacters);
-                    DefaultArchetype removewarrior = ShowListRegisteredCharacter.getListOfCharacters().get(index = chooseWarrior.nextInt() - 1);
+            case 2:
+                new ShowListRegisteredCharacter().ShowListRegisteredCharacter();
+                //System.out.println(ShowListRegisteredCharacter.getListOfCharacters().get(index));
+                printMenu();
+                break;
 
-                    ShowListRegisteredCharacter.getListOfCharacters().remove(removewarrior);
+            case 3:
+                System.out.println(ShowListRegisteredCharacter.getListOfCharacters());
+                System.out.println("choisissez votre combattant numéro 1");
+                DefaultArchetype warrior1 = ShowListRegisteredCharacter.getListOfCharacters().get(index = chooseWarrior.nextInt() - 1);
+                System.out.println("choisissez votre combattant numéro 2");
+                DefaultArchetype warrior2 = ShowListRegisteredCharacter.getListOfCharacters().get(index = chooseWarrior.nextInt() - 1);
 
-                    //System.out.println(removewarrior);
-                    System.out.println(ShowListRegisteredCharacter.getListOfCharacters());
-                    printMenu();
-                    break;
+                Fight fight = new Fight();
+                fight.Fight(warrior1, warrior2);
+                printMenu();
+                break;
 
-                default:
-                    menu.nextLine();
-                    System.out.println("You written an invalid number");
-                    System.out.println("please enter a number referenced in the menu");
-                    System.out.println("Press Enter to continue");
-                    //menu.nextLine();
-                    printMenu();
-                    break;
+            case 4:
+                Exit exit = new Exit();
+                exit.Exit();
+                break;
+            case 5:
+                System.out.println(" Choose your Character you want to delete ! ");
+                System.out.println("------------------------------");
+                System.out.println(listOfCharacters);
+                System.out.println("------------------------------");
+                DefaultArchetype removewarrior = ShowListRegisteredCharacter.getListOfCharacters().get(index = chooseWarrior.nextInt() - 1);
+
+                ShowListRegisteredCharacter.getListOfCharacters().remove(removewarrior);
+
+                //System.out.println(removewarrior);
+                System.out.println(ShowListRegisteredCharacter.getListOfCharacters());
+                printMenu();
+                break;
+
+            default:
+                menu.nextLine();
+                System.out.println("You written an invalid syntax ");
+                System.out.println("please enter a valid syntax for all your route");
+                System.out.println("Press Enter to continue");
+                //menu.nextLine();
+                printMenu();
+                break;
+        }
+
+
+
+
+
+
+
+
             }
-    }
-}
+};
 
 
 

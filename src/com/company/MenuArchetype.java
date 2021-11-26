@@ -40,6 +40,7 @@ public class MenuArchetype extends Menu {
             System.out.println("You written an invalid syntax");
             System.out.println("please enter a valid syntax for your all route referenced");
             System.out.println("Press Enter to continue");
+            menu.nextLine();
             printMenuArchetype();
         }
     }
@@ -49,16 +50,16 @@ public class MenuArchetype extends Menu {
             case 1:
                 DefaultArchetype newCharacter = new DefaultArchetype();
 
-                System.out.println("Entrez un nom");
+                System.out.println("Enter a name");
                 newCharacter.setName(menu.next());
 
-                System.out.println("Entrez des lifepoint");
+                System.out.println("Enter life point");
                 newCharacter.setLifePoint(menu.nextInt());
 
-                System.out.println("Entrez des damages");
+                System.out.println("Enter damages");
                 newCharacter.setDamage(menu.nextInt());
 
-                System.out.println("Entrez une initiative");
+                System.out.println("Enter initiative");
                 newCharacter.setInitiative(menu.nextInt());
 
                 ShowListRegisteredCharacter.addDefaultArchetype(newCharacter);
@@ -71,19 +72,19 @@ public class MenuArchetype extends Menu {
             case 2:
                 WarriorArchetype newWarriorCharacter = new WarriorArchetype();
 
-                System.out.println("Entrez un nom");
+                System.out.println("Enter a name");
                 newWarriorCharacter.setName(menu.next());
 
-                System.out.println("Entrez des lifepoint");
+                System.out.println("Enter life point");
                 newWarriorCharacter.setLifePoint(menu.nextInt());
 
-                System.out.println("Entrez des damages");
+                System.out.println("Enter damages");
                 newWarriorCharacter.setDamage(menu.nextInt());
 
-                System.out.println("Entrez une initiative");
+                System.out.println("Enter an initiative");
                 newWarriorCharacter.setInitiative(menu.nextInt());
 
-                System.out.println("Entrez un shield");
+                System.out.println("Enter a shield");
                 newWarriorCharacter.setShield(menu.nextInt());
 
                 ShowListRegisteredCharacter.addDefaultArchetype(newWarriorCharacter);
@@ -93,19 +94,19 @@ public class MenuArchetype extends Menu {
             case 3:
                 WizardArchetype newWizardCharacter = new WizardArchetype();
 
-                System.out.println("Entrez un nom");
+                System.out.println("Enter a name");
                 newWizardCharacter.setName(menu.next());
 
-                System.out.println("Entrez des lifepoint");
+                System.out.println("Enter life point");
                 newWizardCharacter.setLifePoint(menu.nextInt());
 
-                System.out.println("Entrez des damages");
+                System.out.println("Enter damages");
                 newWizardCharacter.setDamage(menu.nextInt());
 
-                System.out.println("Entrez une initiative");
+                System.out.println("Enter an initiative");
                 newWizardCharacter.setInitiative(menu.nextInt());
 
-                System.out.println("Entrez des magic damages");
+                System.out.println("Enter magic damages");
                 newWizardCharacter.setMagicDamage(menu.nextInt());
 
                 ShowListRegisteredCharacter.addDefaultArchetype(newWizardCharacter);
@@ -115,22 +116,22 @@ public class MenuArchetype extends Menu {
             case 4:
                 RogueArchetype newRogueCharacter = new RogueArchetype();
 
-                System.out.println("Entrez un nom");
+                System.out.println("Enter a name");
                 newRogueCharacter.setName(menu.next());
 
-                System.out.println("Entrez des lifepoint");
+                System.out.println("Enter life point ");
                 newRogueCharacter.setLifePoint(menu.nextInt());
 
-                System.out.println("Entrez des damages");
+                System.out.println("Enter damages ");
                 newRogueCharacter.setDamage(menu.nextInt());
 
-                System.out.println("Entrez une initiative");
+                System.out.println("Enter an initiative");
                 newRogueCharacter.setInitiative(menu.nextInt());
 
-                System.out.println("Entrez un dodge");
+                System.out.println("Enter a dodge");
                 newRogueCharacter.setDodge(menu.nextInt());
 
-                System.out.println("Entrez un critical hit");
+                System.out.println("Enter a critical hit");
                 newRogueCharacter.setCriticalHit(menu.nextInt());
 
                 ShowListRegisteredCharacter.addDefaultArchetype(newRogueCharacter);
@@ -151,13 +152,13 @@ public class MenuArchetype extends Menu {
                 break;
 
             default:
-//                menu.nextLine();
-//                System.out.println("You written an invalid number");
-//                System.out.println("please enter a number referenced in the menu");
-//                System.out.println("Press Enter to continue");
-//                menu.nextLine();
+                menu.nextLine();
+                System.out.println("You written an invalid number");
+                System.out.println("please enter a number referenced in the menu");
+                System.out.println("Press Enter to continue");
+                printMenuArchetype();
                 break;
-               // printMenuArchetype();
+
         }
 
     }

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+
+import static com.company.ShowListRegisteredCharacter.listOfCharacters;
 //implements Cloneable
 
 public class Menu {
@@ -42,7 +44,7 @@ public class Menu {
             String secondItemMenu = "2: Show Character";
             String thirdItemMenu = "3: Fight";
             String fourthItemMenu = "4: Quit";
-            String firthItemMenu = "5: createCharacter";
+            String firthItemMenu = "5: Remove character";
             System.out.println(firstItemMenu);
             System.out.println(secondItemMenu);
             System.out.println(thirdItemMenu);
@@ -53,19 +55,19 @@ public class Menu {
             numberChoosenByUser = menu.nextInt();
             chooseTypeMenu(numberChoosenByUser);
         }
+
         catch (Exception e)  {
             menu.nextLine();
             System.out.println("You written an invalid number");
             System.out.println("please enter a number referenced in the menu");
             System.out.println("Press Enter to continue");
-            menu.nextLine();
             printMenu();
         }
     }
 
 
+
     protected void chooseTypeMenu(int anyNumber) {
-        try {
             switch (anyNumber) {
 
                 case 1:
@@ -74,11 +76,13 @@ public class Menu {
                     //listOfCharacters.add(new DefaultArchetype());
                     //System.out.println(listOfCharacters);
                     printMenu();
+                    break;
 
                 case 2:
                     new ShowListRegisteredCharacter().ShowListRegisteredCharacter();
                     System.out.println(ShowListRegisteredCharacter.getListOfCharacters().get(index));
                     printMenu();
+                    break;
                 case 3:
                     System.out.println(ShowListRegisteredCharacter.getListOfCharacters());
                     System.out.println("choisissez votre combattant numéro 1");
@@ -90,31 +94,34 @@ public class Menu {
                     fight.Fight(warrior1, warrior2);
                     printMenu();
                     break;
+
                 case 4:
                     Exit exit = new Exit();
                     exit.Exit();
-
                     break;
+                case 5:
+                    System.out.println("------------------------------");
+                    System.out.println(" Choose your Character to delete ! ");
+                    System.out.println("------------------------------");
+                    System.out.println(listOfCharacters);
+                    DefaultArchetype removewarrior = ShowListRegisteredCharacter.getListOfCharacters().get(index = chooseWarrior.nextInt() - 1);
+
+                    ShowListRegisteredCharacter.getListOfCharacters().remove(removewarrior);
+
+                    //System.out.println(removewarrior);
+                    System.out.println(ShowListRegisteredCharacter.getListOfCharacters());
+                    printMenu();
+                    break;
+
                 default:
                     menu.nextLine();
                     System.out.println("You written an invalid number");
                     System.out.println("please enter a number referenced in the menu");
                     System.out.println("Press Enter to continue");
-                    menu.nextLine();
+                    //menu.nextLine();
                     printMenu();
+                    break;
             }
-
-
-        } catch (Exception e)  {
-            menu.nextLine();
-            System.out.println("You written an invalid number");
-            System.out.println("please enter a number referenced in the menu");
-            System.out.println("Press Enter to continue");
-            menu.nextLine();
-            printMenu();
-        }
-
-
     }
 }
 

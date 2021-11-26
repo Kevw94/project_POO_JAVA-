@@ -27,7 +27,8 @@ class WarriorArchetype extends DefaultArchetype {
     }
 
     public String toString(){
-        return "Name =  " + name + "\n" +
+        return "Warrior Archetype" + "\n" +
+                "Name =  " + name + "\n" +
                 "Lifepoint = " + lifePoint + "\n" +
                 "Damage = " + damage + "\n" +
                 "Initiative = " + initiative + "\n" +

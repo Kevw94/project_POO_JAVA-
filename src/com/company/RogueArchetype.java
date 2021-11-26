@@ -38,7 +38,8 @@ class RogueArchetype extends DefaultArchetype {
     }
 
     public String toString() {
-        return "name =  " + name + "\n" +
+        return "Rogue Archetype" + "\n" +
+                "name =  " + name + "\n" +
                 "Lifepoint = " + lifePoint + "\n" +
                 "Damage = " + damage + "\n" +
                 "Initiative = " + initiative + "\n" +

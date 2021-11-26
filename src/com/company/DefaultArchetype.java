@@ -1,8 +1,6 @@
 package com.company;
 
 
-import java.util.List;
-import java.util.Scanner;
 
 public class DefaultArchetype  {
 
@@ -57,7 +55,8 @@ public class DefaultArchetype  {
 
 
     public String toString() {
-        return "name =  " + name + "\n" +
+        return "Default Archetype" + "\n" +
+                "name =  " + name + "\n" +
                 "Lifepoint = " + lifePoint + "\n" +
                 "Damage = " + damage + "\n" +
                 "Initiative = " + initiative;

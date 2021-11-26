@@ -24,12 +24,10 @@ public class ShowListRegisteredCharacter  {
     }
 
     public void ShowListRegisteredCharacter() {
-        //System.out.println(setListOfCharacters(listOfCharacters.()));
-        //System.out.println(listOfCharacters);
 
-        //System.out.println(listOfCharacters);
+        System.out.println(listOfCharacters);
 
-        //System.out.println("ShowListRegisteredCharacter :)");
+        System.out.println("ShowListRegisteredCharacter :)");
     }
 //    public String toString(){
 //        //setListOfCharacters(listOfCharacters).get(indexList());

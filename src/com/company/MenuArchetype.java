@@ -4,7 +4,7 @@ import com.company.ShowListRegisteredCharacter;
 
 import java.util.*;
 //ORDRE DU MENU : 1 : QUIT, 2 : DEFAULT, 3 : WARRIOR, 4 : WIZARD, 5 : ROGUE
-public class MenuArchetype extends Menu{
+public class MenuArchetype extends Menu {
 
     //Scanner chooseWarrior = new Scanner(System.in);
     //int index; //= chooseWarrior.nextInt();
@@ -14,27 +14,34 @@ public class MenuArchetype extends Menu{
     protected int numberChoosenByUser;
 
 
-
     protected void printMenuArchetype() {
-        System.out.println("-----------------------------------------");
-        System.out.println("Choose your fighter !");
-        System.out.println("-----------------------------------------");
-        String firstItemMenu = "1: Create Default";
-        String secondItemMenu = "2: Create Warrior";
-        String thirdItemMenu = "3: Create Wizard";
-        String fourthItemMenu = "4: Create Rogue";
-        String fifthItemMenu =  "5: Return to menu";
-        String sixthItemMenu = "6: Quit ";
-        System.out.println(firstItemMenu);
-        System.out.println(secondItemMenu);
-        System.out.println(thirdItemMenu);
-        System.out.println(fourthItemMenu);
-        System.out.println(fifthItemMenu);
-        System.out.println(sixthItemMenu);
-        System.out.println();
+        try {
+            System.out.println("-----------------------------------------");
+            System.out.println("Choose your fighter !");
+            System.out.println("-----------------------------------------");
+            String firstItemMenu = "1: Create Default";
+            String secondItemMenu = "2: Create Warrior";
+            String thirdItemMenu = "3: Create Wizard";
+            String fourthItemMenu = "4: Create Rogue";
+            String fifthItemMenu = "5: Return to menu";
+            String sixthItemMenu = "6: Quit ";
+            System.out.println(firstItemMenu);
+            System.out.println(secondItemMenu);
+            System.out.println(thirdItemMenu);
+            System.out.println(fourthItemMenu);
+            System.out.println(fifthItemMenu);
+            System.out.println(sixthItemMenu);
+            System.out.println();
 
-        numberChoosenByUser = menu.nextInt();
-        chooseTypeMenu(numberChoosenByUser);
+            numberChoosenByUser = menu.nextInt();
+            chooseTypeMenu(numberChoosenByUser);
+        } catch (Exception e) {
+            menu.nextLine();
+            System.out.println("You written an invalid syntax");
+            System.out.println("please enter a valid syntax for your all route referenced");
+            System.out.println("Press Enter to continue");
+            printMenuArchetype();
+        }
     }
 
     protected void chooseTypeMenu(int anyNumber) {
@@ -59,8 +66,8 @@ public class MenuArchetype extends Menu{
 
                 break;
 
-                // souhaitez vous créer un autre personnage ?
-                //break;
+            // souhaitez vous créer un autre personnage ?
+            //break;
             case 2:
                 WarriorArchetype newWarriorCharacter = new WarriorArchetype();
 
@@ -82,6 +89,7 @@ public class MenuArchetype extends Menu{
                 ShowListRegisteredCharacter.addDefaultArchetype(newWarriorCharacter);
                 System.out.println(ShowListRegisteredCharacter.getListOfCharacters());
                 break;
+
             case 3:
                 WizardArchetype newWizardCharacter = new WizardArchetype();
 
@@ -103,6 +111,7 @@ public class MenuArchetype extends Menu{
                 ShowListRegisteredCharacter.addDefaultArchetype(newWizardCharacter);
                 System.out.println(ShowListRegisteredCharacter.getListOfCharacters());
                 break;
+
             case 4:
                 RogueArchetype newRogueCharacter = new RogueArchetype();
 
@@ -140,12 +149,31 @@ public class MenuArchetype extends Menu{
                 Exit exit = new Exit();
                 exit.Exit();
                 break;
+
+            default:
+//                menu.nextLine();
+//                System.out.println("You written an invalid number");
+//                System.out.println("please enter a number referenced in the menu");
+//                System.out.println("Press Enter to continue");
+//                menu.nextLine();
+                break;
+               // printMenuArchetype();
         }
 
     }
-
-
 }
+//        catch (Exception e) {
+//            menu.nextLine();
+//            System.out.println("You written an invalid number");
+//            System.out.println("please enter a number referenced in the menu");
+//            System.out.println("Press Enter to continue");
+//            menu.nextLine();
+//            printMenuArchetype();
+//        }
+
+
+
+
 
 
 
